@@ -22,5 +22,14 @@ const printHelp = () => {
    );
 }
 
-export {  prinsSuccess, printError, printHelp}
+const printWeather = (res, icon) => {
+    console.log(
+        dedent`${chalk.bgMagenta( 'Weather')} Погода в городе ${res.name}
+        ${icon}   ${res.weather[0].description}
+        Температура :   ${Math.ceil(res.main.temp) + '℉'} (ощущается как)   ${res.main.feels_like}
+        `
+   );
+}
+
+export {  prinsSuccess, printError, printHelp, printWeather}
 
